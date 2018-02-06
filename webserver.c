@@ -18,7 +18,19 @@
 #define BUFFSIZE	99999
 #define BYTE		1024
 
-int recvln(connection, char *, int);
+#define ERROR_400	"<head></head><body><html><h1>Error 400</h1><p>Th\
+e server couldn't understand your request.</html></body>\n"
+
+int	recvln(connection, char *, int);
+
+/*-----------------------------------------------------------------------
+ *
+ * Program: webserver
+ * Purpose: serve hard-coded webpages to web clients
+ * Usage:   webserver <appnum>
+ *
+ *-----------------------------------------------------------------------
+ */
 int main(int argc, char *argv[]) {
 
 	connection	conn;
